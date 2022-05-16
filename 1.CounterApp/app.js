@@ -9,3 +9,18 @@ https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML
 */
 
 // Escribe tu codigo aqui
+'use strict'
+
+var btnMin = document.querySelector('.counter-minus');
+var btnPlus = document.querySelector('.counter-plus');
+
+var counterDis = document.querySelector('.counter-display');
+
+
+btnMin.addEventListener('click', () => {
+	document.querySelector('.counter-display').innerHTML = "-";
+});
+
+btnPlus.addEventListener('click', () => {
+	document.querySelector('.counter-display').innerHTML = "+";
+});
