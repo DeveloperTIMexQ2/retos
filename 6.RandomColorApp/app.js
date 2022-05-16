@@ -14,3 +14,28 @@ https://developer.mozilla.org/es/docs/Web/API/Element/classList
 */
 
 // Escribe tu codigo aqui
+var btnG = document.getElementById('gen-btn');
+var sp = document.getElementById('span-color');
+var btnC = document.getElementById('copy-btn');
+var input = document.getElementById('output');
+
+function generar(){
+    var random = Math.floor(Math.random() * 0xffffff * 1000000).toString(16);
+    return document.getElementById('output').value = `#${random.slice(0,6)}`;
+}
+
+btnG.addEventListener('click', function(){
+    sp.classList.add('show-color');
+    generar();
+    var colorHexa = document.getElementById('output').value;
+    document.getElementById('output-color').style.background = colorHexa;
+});
+
+btnC.addEventListener('click', function(){
+
+    input.focus();
+    
+    document.execCommand('selectAll');
+    document.execCommand('copy');
+
+});
