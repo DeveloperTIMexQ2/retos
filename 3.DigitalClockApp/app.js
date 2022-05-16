@@ -7,3 +7,9 @@ https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Da
 */
 
 // Escribe tu codigo aqui
+var mostrar = document.getElementById('digital-clock');
+
+setInterval(()=>{
+    var hora = new Date();
+    mostrar. innerHTML = hora.toLocaleTimeString();
+}, 1000);
