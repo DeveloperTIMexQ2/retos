@@ -18,3 +18,23 @@ https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML
 */
 
 // Escribe tu codigo aqui
+'use strict'
+var btnPush = document.getElementById('push');
+var text = document.getElementById('text');
+var btnDelete = document.querySelector('.delete');
+
+
+btnPush.addEventListener('click', () =>{
+	if(text.value.length < 1){
+		alert("No haz escrito nada");
+	}else{
+		var inputValue = document.getElementById('text').value;
+		document.getElementById('taskname').innerHTML = inputValue;
+	}
+});
+
+btnDelete.addEventListener('click', () =>{
+	var tasks = document.getElementById('tasks');
+	var taskname = document.getElementById('taskname');
+	tasks.removeChild(taskname);
+});
