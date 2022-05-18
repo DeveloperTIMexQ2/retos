@@ -22,14 +22,14 @@ function checker() {
  if(emailId.value.match(mailRegex)){
     i1.style.display="block";
     i1.style.color = "#2ecc71"
-    i1.style.border = "2px solid #2ecc71"
+    emailId.style.border = "";
     i2.style.display="none";
     errorMsg.style.display = "none";
  }else{
     i1.style.display="none";
     i2.style.display="block";
     i2.style.color = "#ff2851";
-    i2.style.border = "2px solid #ff2851";
+    emailId.style.border = "2px solid #ff2851";
     errorMsg.style.display = "block";
    }
 
