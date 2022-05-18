@@ -22,7 +22,7 @@ function checker() {
  if(emailId.value.match(mailRegex)){
     i1.style.display="block";
     i1.style.color = "#2ecc71"
-    emailId.style.border = "";
+    emailId.style.border = "2px solid #2ecc71";
     i2.style.display="none";
     errorMsg.style.display = "none";
  }else{
@@ -37,6 +37,6 @@ function checker() {
     i1.style.display="none";
     i2.style.display="none";
     errorMsg.style.display = "none";
-    icon.border = "2px solid #d1d3d4";
+    emailId.style.border =  "2px solid #d1d3d4";
   }
 }
