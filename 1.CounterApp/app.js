@@ -16,11 +16,17 @@ var btnPlus = document.querySelector('.counter-plus');
 
 var counterDis = document.querySelector('.counter-display');
 
-
-btnMin.addEventListener('click', () => {
-	document.querySelector('.counter-display').innerHTML = "-";
-});
+let number = 0;
 
 btnPlus.addEventListener('click', () => {
-	document.querySelector('.counter-display').innerHTML = "+";
+	number++;
+	counterDis.innerHTML = number;
+});
+
+btnMin.addEventListener('click', () => {
+	if(number==0){}
+	else{
+		number--;
+		counterDis.innerHTML = number;
+	}
 });
