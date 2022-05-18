@@ -22,19 +22,30 @@ https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML
 var btnPush = document.getElementById('push');
 var text = document.getElementById('text');
 var btnDelete = document.querySelector('.delete');
+var tDiv = document.getElementById('tasks');
+var cDiv = document.getElementById('container');
 
 
 btnPush.addEventListener('click', () =>{
-	if(text.value.length < 1){
+	if(text.value.length <= 1){
 		alert("No haz escrito nada");
 	}else{
 		var inputValue = document.getElementById('text').value;
-		document.getElementById('taskname').innerHTML = inputValue;
+		document.getElementById('tasks').innerHTML += `<div class="task" id='${inputValue}'>
+		<span id="taskname">
+		  ${inputValue}
+		</span>
+		<button class="delete" onclick="remover('${inputValue}')">
+		  <i class="far fa-trash-alt"></i>
+		</button>
+	  </div>`
+	  document.getElementById('text').value = '';
 	}
 });
 
-btnDelete.addEventListener('click', () =>{
-	var tasks = document.getElementById('tasks');
-	var taskname = document.getElementById('taskname');
-	tasks.removeChild(taskname);
-});
+function remover(element) {
+	/*console.log(event.target.parentElement);
+	event.target.parentElement.removeChild(task);*/
+
+	document.getElementById(element).remove();
+}
